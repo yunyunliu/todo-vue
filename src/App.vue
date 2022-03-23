@@ -3,7 +3,16 @@
     <h1>todo list</h1>
     <ul>
       <li>
-        <to-do-item label="a todo item"></to-do-item>
+        <to-do-item label="first todo item" :done="false"></to-do-item>
+      </li>
+      <li>
+        <to-do-item label="second todo item" :done="true"></to-do-item>
+      </li>
+      <li>
+        <to-do-item label="third todo item" :done="true"></to-do-item>
+      </li>
+      <li>
+        <to-do-item label="fourth todo item" :done="false"></to-do-item>
       </li>
     </ul>
   </div>
