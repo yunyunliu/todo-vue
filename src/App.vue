@@ -3,7 +3,7 @@
     <h1>todo list</h1>
     <ul>
       <li>
-        <to-do-item></to-do-item>
+        <to-do-item label="a todo item"></to-do-item>
       </li>
     </ul>
   </div>

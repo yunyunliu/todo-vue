@@ -1,12 +1,15 @@
 <template>
   <div>
-    <label>
-       <input type='checkbox'>
-       Todo Item
-    </label>
+    <label for="todo-item">{{label}}</label>
+    <input type='checkbox' id="todo-item" />
   </div>
 </template>
 
 <script>
-  export default {}
+  export default {
+    props: {
+      label: { required: true, type: String },
+      done: { default: false, type: Boolean }
+    }
+  }
 </script>
