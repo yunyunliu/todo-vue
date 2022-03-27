@@ -1,7 +1,8 @@
 <template>
   <div class="custom-checkbox">
     <label :for="id" class="checkbox-label">{{label}}</label>
-    <input type='checkbox' class="checkbox" :checked="isDone" :id="id" />
+    <input type='checkbox' class="checkbox" :checked="isDone" :id="id"
+      @change="$emit('checkbox-changed')" />
   </div>
 </template>
 

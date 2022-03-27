@@ -2,9 +2,12 @@
   <div id='app'>
     <to-do-form @todo-added="addToDo"></to-do-form>
     <h1>todo list</h1>
+    <h2 id="list-summary">{{listSummary}}</h2>
     <ul class="stack-large">
       <li v-for="item in ToDoItems" :key="item.id">
-        <to-do-item :label="item.label" :done="item.done" :id="item.id"></to-do-item>
+        <to-do-item :label="item.label" :done="item.done" :id="item.id"
+            @checkbox-changed="updateDoneStatus(item.id)">
+        </to-do-item>
       </li>
     </ul>
   </div>
@@ -35,6 +38,16 @@
       addToDo(toDoLabel) {
         this.ToDoItems.push({ id: uniqueId('todo-'), label: toDoLabel, done: false });
         console.log('to add:', toDoLabel);
+      },
+      updateDoneStatus(id) {
+        const toUpdate = this.ToDoItems.find(item => item.id === id);
+        toUpdate.done = !toUpdate.done;
+      }
+    },
+    computed: {
+      listSummary() {
+        const numFinishedItems = this.ToDoItems.filter(item => item.done).length;
+        return `${numFinishedItems} out of ${this.ToDoItems.length} items completed`
       }
     }
   }
