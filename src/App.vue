@@ -33,6 +33,7 @@
     },
     methods: {
       addToDo(toDoLabel) {
+        this.ToDoItems.push({ id: uniqueId('todo-'), label: toDoLabel, done: false });
         console.log('to add:', toDoLabel);
       }
     }
