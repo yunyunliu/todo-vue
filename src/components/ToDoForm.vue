@@ -1,8 +1,10 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <label for="add-todo-input">What to do?</label>
-    <input id="add-todo-input" v-model.lazy.trim="label" />
-    <button>Add</button>
+    <h2>
+      <label for="add-todo-input">What to do?</label>
+    </h2>
+    <input id="add-todo-input" type="text" v-model.lazy.trim="label" />
+    <button class="btn btn__primary btn__lg">Add</button>
   </form>
 </template>
 
