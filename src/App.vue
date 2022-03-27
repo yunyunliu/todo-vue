@@ -1,6 +1,6 @@
 <template>
   <div id='app'>
-    <to-do-form></to-do-form>
+    <to-do-form @todo-added="addToDo"></to-do-form>
     <h1>todo list</h1>
     <ul>
       <li v-for="item in ToDoItems" :key="item.id">
@@ -29,6 +29,11 @@
           { label: 'Have fun', id: uniqueId('todo-') },
           { label: 'Create a to-do list', done: false, id: uniqueId('todo-') }
         ]
+      }
+    },
+    methods: {
+      addToDo(toDoLabel) {
+        console.log('to add:', toDoLabel);
       }
     }
   }
