@@ -15,9 +15,9 @@ component object exported by <script> section contains properties:
   for each prop where you can set a default value for the prop, mark it as required, set what type it should
   be (like react propTypes)
   - methods: object containing any methods that need to be called in the component
-  - computed:
+  - computed: object contain methods that perform a calculation and return the result
 
-vue direction = prefixed html attribute 'that tells the library to do sommething to a dom element'
+vue directive = prefixed html attribute 'that tells the library to do sommething to a dom element'
 
 built-in directives:
 v-bind: use the bind JS expressions to html elements and components/basically the vue way of
@@ -30,11 +30,18 @@ v-on: for event-handling/attaching event handler to an element
 v-model: used to keep a prop in sync with value of <input> element; like using onChange handler that set event.target.value
 to state in react
   - syntax = v-model.modifier="variable"
+v-if:
+v=else:
 
 custom events: use to pass data from child to paraent component; a child component can emit a custom event which passes
-data with the event to a parent with a listener for the event (like lifting up state in react?)
+data with the event to a parent with a listener for the event (like lifting up state in react?); use with this.$emit()
+and v-on
 
 styling vue component:
 1. import external css file into main.js (index.js in react)
 2. global css styles in single file component (in <style> element)
 3. component-scoped css styles in single file component (using scoped attribute on <style> element)
+
+computed properties - similar methods but only run when their dependencies change to avoid unnecessary rerenders
+
+condition rendering
