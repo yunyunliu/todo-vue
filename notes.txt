@@ -1,0 +1,25 @@
+single file components = html template, script, and css together in a single file
+parts of vue component:
+1. template = markup structure and display logic of component
+2. script = non-display logic; exports a js object - this object is where you locally
+register components, define inputs/props, define methods, handle local state
+3. style = css for the component that can be scoped to styles for the current component
+
+data object/data() method is for storing state
+
+component object exported by <script> section contains properties:
+  - name: name of component
+  - components: object where you register (child) components to make them available inside
+  current component
+  - props: for registering component's props/input; either an array of prop names or object containing keys
+  for each prop where you can set a default value for the prop, mark it as required, set what type it should
+  be (like react propTypes)
+
+vue direction = prefixed html attribute 'that tells the library to do sommething to a dom element'
+
+built-in directives:
+v-bind: use the bind JS expressions to html elements and components/basically the vue way of
+embedding js in html, like how react uses jsx, which is html with javascript between {}
+  - shorthand syntax = :attribute="expression"
+  v-for: for rendering list of components from an array (like array.map() in react); is like a js for-in loop
+  and is attached to the component you want to repeat
