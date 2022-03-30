@@ -17,7 +17,36 @@
   </form>
 </template>
 
-<script></script>
+<script>
+
+  export default {
+    props: {
+      label: {
+        type: String,
+        required: true
+      },
+      id: {
+        type: String,
+        required: true
+      }
+    },
+    methods: {
+      onSubmit() {
+        if (this.newLabel && this.newLabel !== this.label) {
+          this.$emit('item-edited', this.newLabel);
+        }
+      },
+      onCancel() {
+        this.$emit('item-edited', this.newLabel);
+      }
+    },
+    data() {
+      return {
+        newLabel: this.label
+      };
+    }
+  }
+</script>
 
 <style scoped>
   .edit-label {

@@ -7,7 +7,7 @@ register components, define inputs/props, define methods, handle local state
 
 data object/data() method is for storing state
 
-component object exported by <script> section contains properties:
+component object must be default export from <script> section; object contains properties:
   - name: name of component
   - components: object where you register (child) components to make them available inside
   current component
