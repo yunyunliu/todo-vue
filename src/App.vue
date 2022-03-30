@@ -1,7 +1,7 @@
 <template>
   <div id='app'>
-    <to-do-form @todo-added="addToDo"></to-do-form>
     <h1>todo list</h1>
+    <to-do-form @todo-added="addToDo"></to-do-form>
     <h2 id="list-summary">{{listSummary}}</h2>
     <ul class="stack-large">
       <li v-for="item in ToDoItems" :key="item.id">

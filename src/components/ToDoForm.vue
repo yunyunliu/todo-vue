@@ -12,7 +12,9 @@
         v-model.lazy.trim="label"
         class="input__lg"
       />
-    <button class="btn btn__primary btn__lg">Add</button>
+    <button type="submit" class="btn btn__primary btn__lg">
+      Add
+    </button>
   </form>
 </template>
 

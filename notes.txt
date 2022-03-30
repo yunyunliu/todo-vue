@@ -14,6 +14,8 @@ component object exported by <script> section contains properties:
   - props: for registering component's props/input; either an array of prop names or object containing keys
   for each prop where you can set a default value for the prop, mark it as required, set what type it should
   be (like react propTypes)
+  - methods: object containing any methods that need to be called in the component
+  - computed:
 
 vue direction = prefixed html attribute 'that tells the library to do sommething to a dom element'
 
@@ -23,3 +25,16 @@ embedding js in html, like how react uses jsx, which is html with javascript bet
   - shorthand syntax = :attribute="expression"
   v-for: for rendering list of components from an array (like array.map() in react); is like a js for-in loop
   and is attached to the component you want to repeat
+v-on: for event-handling/attaching event handler to an element
+  - shorthand syntax = @event.modifier="method"
+v-model: used to keep a prop in sync with value of <input> element; like using onChange handler that set event.target.value
+to state in react
+  - syntax = v-model.modifier="variable"
+
+custom events: use to pass data from child to paraent component; a child component can emit a custom event which passes
+data with the event to a parent with a listener for the event (like lifting up state in react?)
+
+styling vue component:
+1. import external css file into main.js (index.js in react)
+2. global css styles in single file component (in <style> element)
+3. component-scoped css styles in single file component (using scoped attribute on <style> element)
