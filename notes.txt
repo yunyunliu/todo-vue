@@ -30,8 +30,11 @@ v-on: for event-handling/attaching event handler to an element
 v-model: used to keep a prop in sync with value of <input> element; like using onChange handler that set event.target.value
 to state in react
   - syntax = v-model.modifier="variable"
-v-if:
-v=else:
+v-if: will only render a block if the value passed to it is truthy; when using v-if directive with v-else or v-else-if,
+these directives must be attached to sibling elements; can attach v-if to a <template> item to conditionally render
+entire template
+v-else:
+v-else-if:
 
 custom events: use to pass data from child to paraent component; a child component can emit a custom event which passes
 data with the event to a parent with a listener for the event (like lifting up state in react?); use with this.$emit()

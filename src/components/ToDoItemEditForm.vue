@@ -1,24 +1,23 @@
 <template>
-  <form class="stack-small">
+  <form class="stack-small" @submit.prevent="onSubmit">
     <div>
       <label class="edit-label"> edit &quot;{{ label }}&quot;</label>
-      <input :id="id" />
+      <input :id="id" v-model.lazy.trim="newLabel" />
     </div>
     <div class="btn-group">
-      <button type="'button" class="btn">
+      <button type="'button" class="btn" @click="onCancel">
         cancel
         <span>editing {{ label }}</span>
       </button>
       <button type="submit" class="btn btn__primary">
         save
-        <span>edit for {{ label }}</span>
+        <span class="visually-hidden">edit for {{ label }}</span>
       </button>
     </div>
   </form>
 </template>
 
 <script>
-
   export default {
     props: {
       label: {
@@ -37,7 +36,7 @@
         }
       },
       onCancel() {
-        this.$emit('item-edited', this.newLabel);
+        this.$emit('edit-cancelled');
       }
     },
     data() {
