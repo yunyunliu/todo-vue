@@ -49,3 +49,9 @@ computed properties - similar methods but only run when their dependencies chang
 
 $event = vue variable used to pass event data to methods; when using native html methods (ie click) $event
 will pass the native event object to method
+
+vue refs - use to accuess underlying DOM nodes;
+  - direct DOM manipulation (ie document.getElementById, etc) can cause vue or react's virtual dom to no longer match
+  actual DOM; this is why need to use vue or react refs to access dom elements instead
+  - to create a ref, add 'ref' attribute to the element you want to access with a string identifier as its value.
+    - access the ref you created through the $refs property on component instance

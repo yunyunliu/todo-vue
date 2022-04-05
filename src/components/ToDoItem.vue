@@ -11,8 +11,13 @@
       <label :for="id" class="checkbox-label">{{ label }}</label>
     </div>
     <div class="btn-group">
-      <button type="button" class="btn" @click="toggleToItemEditForm">
-        edit <span class="visually-hidden">{{ label }}</span>
+      <button
+        type="button"
+        class="btn"
+        ref="editButton"
+        @click="toggleToItemEditForm">
+        edit
+        <span class="visually-hidden">{{ label }}</span>
       </button>
       <button type="button" class="btn btn__danger" @click="deleteToDo">
         delete <span class="visually-hidden">{{ label }}</span>
@@ -55,6 +60,7 @@ import ToDoItemEditForm from './ToDoItemEditForm';
       },
       toggleToItemEditForm() {
         this.isEditing = true;
+        console.log(this.$refs.editButton)
       },
       itemEdited(newLabel) {
         this.$emit('item-edited', newLabel);
