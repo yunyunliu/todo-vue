@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import ToDoItemEditForm from './ToDoItemEditForm';
+  import ToDoItemEditForm from './ToDoItemEditForm';
   export default {
     components: {
       ToDoItemEditForm
@@ -60,14 +60,20 @@ import ToDoItemEditForm from './ToDoItemEditForm';
       },
       toggleToItemEditForm() {
         this.isEditing = true;
-        console.log(this.$refs.editButton)
       },
       itemEdited(newLabel) {
         this.$emit('item-edited', newLabel);
         this.isEditing = false;
+        this.focusOnEditButton();
       },
       editCancelled() {
         this.isEditing = false;
+        this.focusOnEditButton();
+      },
+      focusOnEditButton() {
+        this.$nextTick(() => {
+        const editButtonRef = this.$refs.editButton; editButtonRef.focus();
+        });
       }
     }
   }
