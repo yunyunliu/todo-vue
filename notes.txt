@@ -47,4 +47,5 @@ styling vue component:
 
 computed properties - similar methods but only run when their dependencies change to avoid unnecessary rerenders
 
-condition rendering
+$event = vue variable used to pass event data to methods; when using native html methods (ie click) $event
+will pass the native event object to method
