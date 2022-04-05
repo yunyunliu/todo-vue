@@ -41,8 +41,12 @@ import ToDoItemEditForm from './ToDoItemEditForm';
     },
     data() {
       return {
-        isDone: this.done,
         isEditing: false
+      }
+    },
+    computed: {
+      isDone() {
+        return this.done;
       }
     },
     methods: {
